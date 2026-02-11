@@ -2,10 +2,10 @@
 layout: default
 ---
 
-# Pin and Brass Sculpture Soldering
+# I Love To Solder
 
-This is my submission for the soldering homework. I am titling it “I love to Solder.”It is a board with 14 pins and a brass wire connected
-to it on both ends, with the wire bent to form a heart.
+This is my submission for the soldering homework, the first assignment for the class. I am titling it “I love to Solder.” It is a board with
+14 pins and a brass wire connected to it on both ends, with the wire bent to form a heart.
 
 To make this, I visited the lab in the basement of Sulz and Miles taught me how to use the soldering pen and solder to connect pins to
 the board. I started by connecting all 14 pins, and then I soldered both ends of the brass wire to holes that were next to each other. I 
