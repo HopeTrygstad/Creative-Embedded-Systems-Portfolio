@@ -23,7 +23,7 @@ layout: default
           <!-- Optional image: uncomment + change src if you have one -->
           <!-- <img src="./assets/project1-thumb.jpg" class="card-img-top" alt="Project 1 thumbnail"> -->
           <div class="card-body">
-            <h5 class="card-title mb-2">Spread the Love Soldering Project</h5>
+            <h5 class="card-title mb-2">I Love To Solder</h5>
             <p class="card-text text-muted mb-0">
               14 pins and a brass wire soldered to a circuit board. Wire was bent into the shape of a heart,
               to symbolize using technology and building projects to spread love and joy.
