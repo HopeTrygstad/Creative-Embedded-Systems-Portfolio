@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Project 1 Title
 
 Description, build process, photos, etc.

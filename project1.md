@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Pin and Brass Sculpture Soldering
 
 This is my submission for the soldering homework. I am titling it “I love to Solder.”It is a board with 14 pins and a brass wire connected
