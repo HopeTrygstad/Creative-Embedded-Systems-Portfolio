@@ -22,7 +22,7 @@ To use the device, you just have to slide the battery in with the smooth side fa
 
 This folder also includes the SVG files I used for the CNC milling, as well as my final PCB file with the design of my circuit. 
 
-See the creative documentation for this project [here](..project2.md).
+See the creative documentation for this project [here](https://hopetrygstad.github.io/Creative-Embedded-Systems-Portfolio/project2.html).
 
 Images of the PCB:
 ![house](https://github.com/user-attachments/assets/7cd85347-d87a-4212-86a3-6610c9686782)
