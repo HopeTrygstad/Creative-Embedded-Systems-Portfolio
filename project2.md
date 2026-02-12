@@ -17,8 +17,7 @@ This informed my design of the circuit, since I wanted the light to be near the 
 like a window, and that the battery holder would kind of look like a chimney because of its shape and size, and the fact that I put it right under the chimney part
 of the outline.
 
-Here is a video of the light flashing:
-https://youtube.com/shorts/ByHMtgRSB7o?feature=share
+[Here is a video of the light flashing.](https://youtube.com/shorts/ByHMtgRSB7o?feature=share)
 
 Here is the PCB on my windowsill, with the other decorations I keep there.
 ![house](https://github.com/user-attachments/assets/819dd378-a49e-48b2-a2ae-702bd96121b5)
