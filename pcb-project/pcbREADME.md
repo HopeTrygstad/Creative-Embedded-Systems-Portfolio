@@ -25,4 +25,7 @@ This folder also includes the SVG files I used for the CNC milling, as well as m
 See the creative documentation for this project [here](..project2.md).
 
 Images of the PCB:
+![house](https://github.com/user-attachments/assets/7cd85347-d87a-4212-86a3-6610c9686782)
+![houseback](https://github.com/user-attachments/assets/e89baa5d-34e0-46b4-9d13-9b1b32cfc71c)
+
 
