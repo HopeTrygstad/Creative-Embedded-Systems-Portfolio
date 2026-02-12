@@ -21,7 +21,9 @@ Here is a video of the light flashing:
 https://youtube.com/shorts/ByHMtgRSB7o?feature=share
 
 Here is the PCB on my windowsill, with the other decorations I keep there.
-<img width="1200" height="1200" alt="Untitled design (26)" src="https://github.com/user-attachments/assets/8fc382e3-3b2c-416f-bfe9-e191d81f1f1a" />
+![house](https://github.com/user-attachments/assets/819dd378-a49e-48b2-a2ae-702bd96121b5)
+
+For technical documentation, click [here](https://github.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/tree/main/pcb-project).
 
 Hopefully it brings you some coziness to look at! 
 
