@@ -66,7 +66,7 @@ layout: default
         </div>
       </a>
     </div>
-  <div>
+  </div>
 </div>
 
 <!-- Bootstrap JS (optional; only needed if you use dropdowns, modals, etc.) -->
