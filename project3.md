@@ -25,14 +25,17 @@ Now for some pictures and videos!
 
 [Here is a video of the installation!](https://youtube.com/shorts/U7ZUqav-p7U?feature=share)
 
-![IMG_8726](https://github.com/user-attachments/assets/b2f4f19f-a6c1-42c0-b9e7-93feac004e94)
+<img width="400" height="400" alt="installation" src="https://github.com/user-attachments/assets/b2f4f19f-a6c1-42c0-b9e7-93feac004e94" />
 Mine is the green one!
 
-![IMG_8740](https://github.com/user-attachments/assets/ddb6045a-aae3-4296-8f6b-3c4ad26bd824)
+<img width="400" height="400" alt="installation" src="https://github.com/user-attachments/assets/ddb6045a-aae3-4296-8f6b-3c4ad26bd824" />
 
 [Click here for a video of the display that ends with the image of the hug.](https://youtube.com/shorts/y4DGku0yrG0?feature=share)
+
 [Click here for a video of the display that ends with the image of the goose.](https://youtube.com/shorts/QaWiQATbdMA?feature=share)
+
 [Click here for a video of the display that ends with the image of the two people with a heart.](https://youtube.com/shorts/Y9NAmZyNwNE?feature=share)
+
 [Click here for a video of the display, spinning around](https://youtube.com/shorts/y4DGku0yrG0?feature=share) (which it did a lot at first).
 
 For technical documentation, click [here](https://github.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/tree/main/pcb-project).
