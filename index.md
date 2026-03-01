@@ -14,7 +14,7 @@ layout: default
   </div>
 
   <!-- Projects Grid -->
-  <div class="row g-4">
+  <div class="row g-4 mb-3">
 
     <!-- Project 1 -->
     <div class="col-12 col-md-6">
