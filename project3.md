@@ -21,15 +21,13 @@ Here are the three images that could pop up after the text is done displaying:
 <img width="128" height="128" alt="waterfowl" src="https://github.com/user-attachments/assets/9e565ab5-f73c-4df0-a445-3c0cf13f4379" />
 <img width="128" height="128" alt="hug" src="https://github.com/user-attachments/assets/d974935a-7a9f-4b6a-8868-7c63b41cb5fb" />
 
-Now for some pictures and videos!
-
 [Here is a video of the installation!](https://youtube.com/shorts/U7ZUqav-p7U?feature=share)
 
-<img width="400" height="400" alt="installation" src="https://github.com/user-attachments/assets/b2f4f19f-a6c1-42c0-b9e7-93feac004e94" />
+![Class Display](https://github.com/user-attachments/assets/b2f4f19f-a6c1-42c0-b9e7-93feac004e94)
 
 Mine is the green one!
 
-<img width="400" height="400" alt="installation" src="https://github.com/user-attachments/assets/ddb6045a-aae3-4296-8f6b-3c4ad26bd824" />
+![Individual Display](https://github.com/user-attachments/assets/ddb6045a-aae3-4296-8f6b-3c4ad26bd824)
 
 [Click here for a video of the display that ends with the image of the hug.](https://youtube.com/shorts/y4DGku0yrG0?feature=share)
 
