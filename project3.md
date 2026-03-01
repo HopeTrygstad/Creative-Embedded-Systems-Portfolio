@@ -26,6 +26,7 @@ Now for some pictures and videos!
 [Here is a video of the installation!](https://youtube.com/shorts/U7ZUqav-p7U?feature=share)
 
 <img width="400" height="400" alt="installation" src="https://github.com/user-attachments/assets/b2f4f19f-a6c1-42c0-b9e7-93feac004e94" />
+
 Mine is the green one!
 
 <img width="400" height="400" alt="installation" src="https://github.com/user-attachments/assets/ddb6045a-aae3-4296-8f6b-3c4ad26bd824" />
