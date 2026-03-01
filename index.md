@@ -50,7 +50,7 @@ layout: default
     </div>
   </div>
 
-  <div class="row g-4>
+  <div class="row g-4">
     <!-- Project 3 -->
     <div class="col-12 col-md-6">
       <a class="text-decoration-none" href="./project3.html">
