@@ -37,7 +37,7 @@ Mine is the green one!
 
 [Click here for a video of the display, spinning around](https://youtube.com/shorts/y4DGku0yrG0?feature=share) (which it did a lot at first).
 
-For technical documentation, click [here](https://github.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/tree/main/pcb-project).
+For technical documentation, click [here](https://github.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/tree/main/GenerativeArtESP32Project).
 
 Hopefully this art piece brought you some joy, and you go read the full poem! :)
 
