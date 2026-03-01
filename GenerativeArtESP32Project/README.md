@@ -1,0 +1,22 @@
+This project involved getting familiar with PlatformIO, how to display content on the ESP32 in the way that I wanted to, and the actual device that we were to display our art on. It involved a lot of trial and error for me: toying with the display in PlatformIO in VSCode, rebuilding and reuploading to the device, watching it and deciding what changing I wanted to make, repeat. 
+
+For each line, I copied it into my main.cpp file, and from there, toyed around with what to do with the text until I thought it looked right. The display goes through four "scenes," and the loop function renders the display based on what scene the program is currently in. At the end of each scene, the program calls startScene() with the next scene, so that it knows to move on in the sequence. Each line of the poem gets its own scene, so it made segmenting the code easier. The startScene function also initialized some important variables, so that this did not need to be redone each time the loop function ran.
+
+The first scene just sets the background to green, then draws the first line onto the background at its current position. It then decrements the X position of the text by 2, moving it left slightly until the X position is off the screen(xPos < -textW). If it is off the screen, it starts scene 2.
+
+The second scene sets the background to black, then draws the second line at the bottom of the screen. It does this by looping through the words in the string one by one, and drawing it below the word above it. It then increments the yOffset variable by 2, moving the text up slightly until the Y position is off the screen. If it is of the screen, it starts scene 3.
+
+The third scene, that displays the third line of the poem, sets the background to purple, then calculates if it has been 700 milliseconds since it changed the display from the last word. If so, it increments the words3Index so that it displays the next word in the line, and chooses a random color for that word. It then sets the text color to the current text color, and draws whatever word it is on onto the background, in the center.
+
+The final scene fills the background color to pink, creates an image height and width, calculates where the center of the display is so the image can be centered. The startScene() function has already chosen a random number between 0, 1, and 2, and the loop function assigns that number to one of the three images it can display at the end, and draws it to the background. Then, if it has been more than 3000 milliseconds since the scene started, it starts the first scene again. 
+
+The hardest part of creating this piece, for me, was figuring out the offset of the y position for the words in scene 2. I recommend drawing out the position you want on a piece of paper/ipad, and the calculating step by step how you got to that coordinate, trying to follow your calculation of the coordinate at each step to see if it got you to your target location(or got you closer). I also had a hard time, in the third scene, writing when a new word/color needed to be generated. For that I recommend thinking about what code needs to be done each time the loop function runs(setting the background, drawing the word in its color), versus what only needs to be done every 700 milliseconds(resetting the clock, going to the next word, and choosing a new random color). Also, always remember that you need to draw things to the background- it's easier than always redrawing text, and can help avoid some flashing. Another note is that size 4 is generally good on a display of this size- when toying with font size, I found that anything larger was difficult to work with, so I stuck to this size in every scene since it was large enough to see, but wouldn't mess anything up. 
+
+You need a data transferring USB-C cord to upload code to your ESP32, and PlatformIO and a USB driver need to be installed on your laptop to do so as well. Then, when you want to upload code, you can just press "Build" and "Upload" in PlatformIO while plugges in to the ESP32, and then watch your display! The ESP32 needs a power source, so you can either plug it in or use a battery, like we did in our installation. 
+
+Here are some images of my display:
+
+![Third line display](https://github.com/user-attachments/assets/4d295364-ee0a-466c-8270-fe9bb0e6a81c)
+![First line display](https://github.com/user-attachments/assets/a4a1eaa8-7ccf-4625-9731-e8a2424ba317)
+
+For creative documentation, see [here.](https://hopetrygstad.github.io/Creative-Embedded-Systems-Portfolio/project3.html)
