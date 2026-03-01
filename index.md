@@ -48,8 +48,25 @@ layout: default
         </div>
       </a>
     </div>
-
   </div>
+
+  </div class="row g-4>
+    <!-- Project 3 -->
+    <div class="col-12 col-md-6">
+      <a class="text-decoration-none" href="./project3.html">
+        <div class="card h-100 shadow-sm">
+          <!-- Optional image: uncomment + change src if you have one -->
+          <!-- <img src="./assets/project2-thumb.jpg" class="card-img-top" alt="Project 2 thumbnail"> -->
+          <div class="card-body">
+            <h5 class="card-title mb-2">Wild Geese Rendition</h5>
+            <p class="card-text text-muted mb-0">
+              Generative text art piece on a ESP32 TTGO T-display showing my rendition of a snippet from "Wild Geese" by Mary Oliver.
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  <div>
 </div>
 
 <!-- Bootstrap JS (optional; only needed if you use dropdowns, modals, etc.) -->
