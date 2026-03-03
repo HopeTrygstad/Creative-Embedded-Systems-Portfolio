@@ -25,11 +25,11 @@ Here are the three images that could pop up after the text is done displaying:
 
 [Here is a video of the installation!](https://youtube.com/shorts/U7ZUqav-p7U?feature=share)
 
-<img src="{{ '/assets/class.png' | relative_url }}" alt="Class Display" style="max-width:100%;">
+<img width="225" height="300" alt="class (1)" src="https://github.com/user-attachments/assets/c18d302e-90a3-4920-8cbe-1d00dae8bbba" />
 
 Mine is the green one!
 
-<img src="{{ '/assets/class2.png' | relative_url }}" alt="Individual Display" style="max-width:100%;">
+<img width="300" height="400" alt="class2" src="https://github.com/user-attachments/assets/713d25ce-8d32-422e-9e33-6d51e72d7412" />
 
 [Click here for a video of the display that ends with the image of the hug.](https://youtube.com/shorts/y4DGku0yrG0?feature=share)
 
