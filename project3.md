@@ -29,7 +29,7 @@ Here are the three images that could pop up after the text is done displaying:
 
 Mine is the green one!
 
-<img src="{{ '/assets/individual.png' | relative_url }}" alt="Individual Display" style="max-width:100%;">
+<img src="{{ '/assets/class2.png' | relative_url }}" alt="Individual Display" style="max-width:100%;">
 
 [Click here for a video of the display that ends with the image of the hug.](https://youtube.com/shorts/y4DGku0yrG0?feature=share)
 
