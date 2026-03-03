@@ -25,12 +25,11 @@ Here are the three images that could pop up after the text is done displaying:
 
 [Here is a video of the installation!](https://youtube.com/shorts/U7ZUqav-p7U?feature=share)
 
-![class](https://raw.githubusercontent.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/main/assets/class.png)
+<img src="{{ '/assets/class.png' | relative_url }}" alt="Class Display" style="max-width:100%;">
 
 Mine is the green one!
 
-![class2](https://raw.githubusercontent.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/main/assets/class2.png)
-
+<img src="{{ '/assets/individual.png' | relative_url }}" alt="Individual Display" style="max-width:100%;">
 
 [Click here for a video of the display that ends with the image of the hug.](https://youtube.com/shorts/y4DGku0yrG0?feature=share)
 
