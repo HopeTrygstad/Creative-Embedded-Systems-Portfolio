@@ -25,11 +25,11 @@ Here are the three images that could pop up after the text is done displaying:
 
 [Here is a video of the installation!](https://youtube.com/shorts/U7ZUqav-p7U?feature=share)
 
-![Class Display](./images/classDisplay.png)
+![Class Display](./class.png)
 
 Mine is the green one!
 
-![Individual Display](./images/individualDisplay.png)
+![Individual Display](./class2.png)
 
 [Click here for a video of the display that ends with the image of the hug.](https://youtube.com/shorts/y4DGku0yrG0?feature=share)
 
