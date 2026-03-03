@@ -25,12 +25,11 @@ Here are the three images that could pop up after the text is done displaying:
 
 [Here is a video of the installation!](https://youtube.com/shorts/U7ZUqav-p7U?feature=share)
 
-![class](https://github.com/user-attachments/assets/078c1d58-5ccb-4320-9e7f-6c2c065c8435)
-
+![class](https://raw.githubusercontent.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/main/assets/class.png)
 
 Mine is the green one!
 
-![class2](https://github.com/user-attachments/assets/75f5efb4-00bc-4c33-9fd9-295797b99baf)
+![class2](https://raw.githubusercontent.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/main/assets/class2.png)
 
 
 [Click here for a video of the display that ends with the image of the hug.](https://youtube.com/shorts/y4DGku0yrG0?feature=share)
