@@ -66,6 +66,22 @@ layout: default
         </div>
       </a>
     </div>
+
+    <!-- Project 4 -->
+    <div class="col-12 col-md-6">
+      <a class="text-decoration-none" href="./project3.html">
+        <div class="card h-100 shadow-sm">
+          <!-- Optional image: uncomment + change src if you have one -->
+          <!-- <img src="./assets/project2-thumb.jpg" class="card-img-top" alt="Project 2 thumbnail"> -->
+          <div class="card-body">
+            <h5 class="card-title mb-2">Tap and Talk</h5>
+            <p class="card-text text-muted mb-0">
+              Ergonomic dictophone prototype with transcription on an ESP32 and copper tap buttons.
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 
