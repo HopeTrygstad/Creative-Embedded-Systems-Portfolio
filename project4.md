@@ -13,3 +13,7 @@ My ergonomic dictophone is called "Tap and Talk." It is a painted Dove soap box 
 The software is just an index.html file to display the program in the browser, and an app.py file that controls the functionality. For transcription mode, it feeds raw audio to OpenAI's Whisper model, which returns a transcription that is displays in the browser. The recording can also be saved through the UI. 
 
 The ESP32's role is quite simple: detect any touch to the copper pads, then send that information to the software program to handle actual recording/saving/playing/downloading.
+
+For technical documentation, click here.
+
+← [Back Home](index.html)
