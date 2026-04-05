@@ -69,7 +69,7 @@ layout: default
 
     <!-- Project 4 -->
     <div class="col-12 col-md-6">
-      <a class="text-decoration-none" href="./project3.html">
+      <a class="text-decoration-none" href="./project4.html">
         <div class="card h-100 shadow-sm">
           <!-- Optional image: uncomment + change src if you have one -->
           <!-- <img src="./assets/project2-thumb.jpg" class="card-img-top" alt="Project 2 thumbnail"> -->
