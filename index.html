@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ergonomic Dictophone</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 24px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto 20px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .status {
+      font-size: 1.4rem;
+      margin: 20px 0 10px 0;
+      font-weight: bold;
+    }
+
+    .mode {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 16px;
+    }
+
+    .instructions {
+      margin-top: 24px;
+      color: #444;
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .key {
+      display: inline-block;
+      background: #eee;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: monospace;
+      font-size: 1rem;
+      margin: 0 4px;
+    }
+
+    .recordings-section {
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 24px 32px 32px 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .recordings-section h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+      text-align: center;
+      width: 120px;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+      text-align: center;
+      width: 90px;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+      text-align: right;
+      width: 140px;
+    }
+
+    .action-btn {
+      background: #222;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      min-width: 52px;
+    }
+
+    .action-btn:hover {
+      background: #444;
+    }
+
+    .download-btn {
+      padding: 10px 16px;
+    }
+
+    .empty-message {
+      color: #666;
+      padding: 10px 0;
+    }
+
+    .recording-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .transcript {
+      margin-top: 6px;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .transcript-label {
+      font-weight: 600;
+    }
+
+    .recording-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+
+    .recording-title:hover {
+      text-decoration: underline;
+    }
+
+    .rename-input {
+      font-size: 1rem;
+      padding: 4px 6px;
+      width: 95%;
+      box-sizing: border-box;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>Tap and Talk! </header>
+
+  <div class="container">
+    <div class="status" id="status">Status: Idle</div>
+    <div class="mode" id="modeDisplay">Mode: Raw</div>
+  </div>
+
+  <div class="recordings-section">
+    <h2>Your Recordings</h2>
+    <table id="recordingsTable">
+      <thead>
+        <tr>
+          <th>Recording</th>
+          <th>Length</th>
+          <th>Play</th>
+          <th>Download</th>
+        </tr>
+      </thead>
+      <tbody id="recordingsBody"></tbody>
+    </table>
+    <div class="empty-message" id="emptyMessage">No recordings yet.</div>
+  </div>
+
+  <script>
+    let currentAudio = null;
+    let currentButton = null;
+    let lastPlayTrigger = 0;
+    let lastRenderedRecordings = "";
+    let renamingFilename = null;
+
+    function updateModeDisplay(mode) {
+      const label = mode === "transcribe" ? "Transcription" : "Raw";
+      document.getElementById("modeDisplay").textContent = "Mode: " + label;
+    }
+
+    function stopCurrentAudio() {
+      if (currentAudio) {
+        currentAudio.pause();
+        if (currentButton) {
+          currentButton.textContent = "▶";
+        }
+      }
+    }
+
+    function togglePlayback(filename, button) {
+      const audio = document.getElementById(`audio-${filename}`);
+      if (!audio) return;
+
+      if (currentAudio && currentAudio !== audio) {
+        stopCurrentAudio();
+      }
+
+      if (audio.paused) {
+        audio.play();
+        button.textContent = "⏸";
+        currentAudio = audio;
+        currentButton = button;
+      } else {
+        audio.pause();
+        button.textContent = "▶";
+      }
+
+      audio.onended = () => {
+        button.textContent = "▶";
+        if (currentAudio === audio) {
+          currentAudio = null;
+          currentButton = null;
+        }
+      };
+
+      audio.onpause = () => {
+        if (!audio.ended && audio.currentTime < audio.duration) {
+          button.textContent = "▶";
+        }
+      };
+
+      audio.onplay = () => {
+        button.textContent = "⏸";
+      };
+    }
+
+    function playLastRecording() {
+      const recordings = document.querySelectorAll("#recordingsBody tr");
+      if (recordings.length === 0) return;
+
+      const firstRow = recordings[0];
+      const button = firstRow.querySelector(".play-btn");
+      const audio = firstRow.querySelector("audio");
+
+      if (!audio || !button) return;
+
+      togglePlayback(audio.id.replace("audio-", ""), button);
+    }
+
+    function renderRecordings(recordings) {
+      const body = document.getElementById("recordingsBody");
+      const emptyMessage = document.getElementById("emptyMessage");
+      currentAudio = null;
+      currentButton = null;
+
+      body.innerHTML = "";
+
+      if (!recordings || recordings.length === 0) {
+        emptyMessage.style.display = "block";
+        return;
+      }
+
+      emptyMessage.style.display = "none";
+
+      recordings.forEach((recording) => {
+        const row = document.createElement("tr");
+
+        const transcriptHtml = recording.transcript
+        ? `<div class="transcript"><span class="transcript-label">Transcript:</span> ${recording.transcript}</div>`
+        : "";
+
+        row.innerHTML = `
+          <td>
+            <div 
+              class="recording-title"
+              data-filename="${recording.filename}"
+              onclick="startRename(this, '${recording.filename}', \`${recording.display_name.replace(/`/g, "\\`")}\`)"
+            >
+              ${recording.display_name}
+            </div>
+            ${transcriptHtml}
+          </td>
+          <td>${recording.duration}</td>
+          <td>
+            <button class="action-btn play-btn" onclick="togglePlayback('${recording.filename}', this)">▶</button>
+            <audio id="audio-${recording.filename}" src="/audio/${recording.filename}"></audio>
+          </td>
+          <td>
+            <button class="action-btn download-btn" onclick="downloadRecording('${recording.filename}')">
+              Download
+            </button>
+          </td>
+        `;
+
+        body.appendChild(row);
+      });
+    }
+
+    async function loadRecordings() {
+      const response = await fetch("/status");
+      const data = await response.json();
+
+      document.getElementById("status").textContent = "Status: " + data.status;
+      updateModeDisplay(data.mode);
+
+      lastRenderedRecordings = JSON.stringify(data.recordings);
+      lastPlayTrigger = data.play_last_trigger || 0;
+
+      renderRecordings(data.recordings);
+    }
+
+    async function refreshFromServer() {
+      const response = await fetch("/status");
+      const data = await response.json();
+
+      document.getElementById("status").textContent = "Status: " + data.status;
+      updateModeDisplay(data.mode);
+
+      const recordingsString = JSON.stringify(data.recordings);
+
+      if (!renamingFilename && recordingsString !== lastRenderedRecordings) {
+        lastRenderedRecordings = recordingsString;
+        renderRecordings(data.recordings);
+      }
+
+      if (data.play_last_trigger > lastPlayTrigger) {
+        lastPlayTrigger = data.play_last_trigger;
+        playLastRecording();
+      }
+    }
+
+    async function sendCommand(endpoint) {
+      const response = await fetch(endpoint, { method: "POST" });
+      const data = await response.json();
+
+      document.getElementById("status").textContent = "Status: " + data.status;
+      updateModeDisplay(data.mode);
+
+      lastRenderedRecordings = JSON.stringify(data.recordings);
+      renderRecordings(data.recordings);
+    }
+
+    async function handleRenameKey(event, input) {
+      if (event.key === "Enter") {
+        const filename = input.dataset.filename;
+        const newName = input.value.trim();
+
+        if (!newName) {
+          return;
+        }
+
+        const response = await fetch("/rename_recording", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            filename: filename,
+            new_name: newName
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          renamingFilename = null;
+          lastRenderedRecordings = JSON.stringify(data.recordings);
+          renderRecordings(data.recordings);
+        }
+      }
+    }
+
+    function startRename(element, filename, currentName) {
+      renamingFilename = filename;
+
+      const safeName = currentName.replace(/"/g, "&quot;");
+
+      element.outerHTML = `
+        <input
+          class="rename-input"
+          type="text"
+          value="${safeName}"
+          data-filename="${filename}"
+          onkeydown="handleRenameKey(event, this)"
+          onblur="cancelRename(this, \`${currentName.replace(/`/g, "\\`")}\`, '${filename}')"
+          autofocus
+        />
+      `;
+
+      const input = document.querySelector(`input[data-filename="${filename}"]`);
+      if (input) {
+        input.focus();
+        input.select();
+      }
+    }
+
+    function cancelRename(input, oldName, filename) {
+      renamingFilename = null;
+
+      input.outerHTML = `
+        <div 
+          class="recording-title"
+          data-filename="${filename}"
+          onclick="startRename(this, '${filename}', \`${oldName.replace(/`/g, "\\`")}\`)"
+        >
+          ${oldName}
+        </div>
+      `;
+    }
+
+    function downloadRecording(filename) {
+      window.location.href = `/download/${filename}`;
+    }
+
+    document.addEventListener("keydown", async (event) => {
+      const tag = event.target.tagName;
+      const isTypingField =
+        tag === "INPUT" ||
+        tag === "TEXTAREA" ||
+        event.target.isContentEditable;
+
+      if (isTypingField) {
+        return;
+      }
+
+      const key = event.key.toLowerCase();
+
+      if (key === "r") {
+        await sendCommand("/toggle_record");
+      } else if (key === "p") {
+        await sendCommand("/toggle_pause");
+      } else if (key === "d") {
+        await sendCommand("/delete_last");
+      } else if (key === "y") {
+        playLastRecording();
+      } else if (key === "m") {
+        await sendCommand("/toggle_mode");
+      }
+    });
+
+    loadRecordings();
+    setInterval(refreshFromServer, 1000);
+  </script>
+</body>
+</html>
