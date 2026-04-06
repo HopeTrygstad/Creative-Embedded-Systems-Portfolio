@@ -31,4 +31,4 @@ Here are some pictures of the device for reference:
 <img width="600" height="800" alt="tapandtalk1 (1)" src="https://github.com/user-attachments/assets/4e9cc82f-f329-4b55-b84a-294ada5cdf92" />
 <img width="600" height="800" alt="tapandtalk2 (1)" src="https://github.com/user-attachments/assets/ded4c67a-43b1-47c2-8ffb-cd4ca1ce8eda" />
 
-For more documentation and a demo, click [here.][https://hopetrygstad.github.io/Creative-Embedded-Systems-Portfolio/project4.html]
+For more documentation and a demo, click [here.](https://hopetrygstad.github.io/Creative-Embedded-Systems-Portfolio/project4.html)
