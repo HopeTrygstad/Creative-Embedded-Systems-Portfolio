@@ -19,7 +19,6 @@ The ESP32's role is quite simple: detect any touch to the copper pads, then send
 
 [Here is a video demo of Tap and Talk at work!][https://youtube.com/shorts/0Va09Ri-PLY?feature=share]
 
-For technical documentation, click [here.][https://github.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio]
-- see app.py, index.html, and main.cpp for the code used in this project.
+For technical documentation, click [here.][https://github.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/tree/main/TapAndTalk]
 
 ← [Back Home](index.html)
