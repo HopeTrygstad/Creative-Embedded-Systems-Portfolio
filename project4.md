@@ -17,8 +17,8 @@ The software is just an index.html file to display the program in the browser, a
 
 The ESP32's role is quite simple: detect any touch to the copper pads, then send that information to the software program to handle actual recording/saving/playing/downloading. In the UI, you can also play the clips with a play button, download recordings, and rename them!
 
-[Here is a video demo of Tap and Talk at work!][https://youtube.com/shorts/0Va09Ri-PLY?feature=share]
+[Here is a video demo of Tap and Talk at work!](https://youtube.com/shorts/0Va09Ri-PLY?feature=share)
 
-For technical documentation, click [here.][https://github.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/tree/main/TapAndTalk]
+For technical documentation, click [here.](https://github.com/HopeTrygstad/Creative-Embedded-Systems-Portfolio/tree/main/TapAndTalk)
 
 ← [Back Home](index.html)
