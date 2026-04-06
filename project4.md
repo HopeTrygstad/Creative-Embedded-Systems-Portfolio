@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Ergonomic Dictophone 
+# Tap And Talk! 
 
 This is my submission for the third project in this class: creating a touch sensitive interface with an ESP32, copper tape, wire and my laptop.
 
@@ -15,7 +15,7 @@ My ergonomic dictophone is called "Tap and Talk." It is a painted Dove soap box 
 
 The software is just an index.html file to display the program in the browser, and an app.py file that controls the functionality. For transcription mode, it feeds raw audio to OpenAI's Whisper model, which returns a transcription that is displays in the browser. The recording can also be saved through the UI. 
 
-The ESP32's role is quite simple: detect any touch to the copper pads, then send that information to the software program to handle actual recording/saving/playing/downloading. In the UI, you can also play the clips with a play button, download recordings, and rename recording!
+The ESP32's role is quite simple: detect any touch to the copper pads, then send that information to the software program to handle actual recording/saving/playing/downloading. In the UI, you can also play the clips with a play button, download recordings, and rename them!
 
 [Here is a video demo of Tap and Talk at work!][https://youtube.com/shorts/0Va09Ri-PLY?feature=share]
 
